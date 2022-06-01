@@ -2,7 +2,7 @@ import Konva from 'konva';
 
 import React from 'react';
 
-import { Stage, Layer, Rect } from 'react-konva';
+import { Stage, Layer, Rect, Text } from 'react-konva';
 
 const Recte = () => {
 
@@ -31,6 +31,7 @@ const Recte = () => {
     return (
         <Stage width={window.innerWidth} height={window.innerHeight}>
             <Layer>
+            <Text text="Try to Drag Rectengle" fontSize={25} padding={20} />
                 <Rect
                     x={100}
                     y={100}
