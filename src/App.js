@@ -1,30 +1,28 @@
-
 import React from 'react';
 
 import './App.css';
 
-import Crcle from './components/circle';
+import MainStage from './components/SeatPicker/MainStage';
 
-import Recte from './components/rect';
+// import Crcle from './components/circle';
 
-import Konva from './components/konva';
+// import Recte from './components/rect';
 
-import Animation from './components/animation';
+// import Konva from './components/konva';
 
-import Transforme from './components/transformer';
+// import Animation from './components/animation';
 
-import Iamge from './components/image';
+// import Transforme from './components/transformer';
+
+// import Iamge from './components/image';
+
+// import Seat from './components/SeatPicker/seat';
 
 
 function App() {
   return (
     <div className="App">
-      <Transforme />
-      <Animation />
-      <Konva />
-      <Crcle />
-      <Recte />
-      <Iamge />
+     <MainStage />
     </div>
   );
 }
