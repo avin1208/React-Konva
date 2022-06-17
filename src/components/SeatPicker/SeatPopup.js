@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useRef } from 'react'
+
 
 const isClickedInside = (e, element) => {
     let node = e.target;
@@ -12,26 +13,28 @@ const isClickedInside = (e, element) => {
 };
 
 const Popup = ({ position, seatId, onClose }) => {
-    const containerRef = React.useRef(null);
+    const containerRef = useRef(null);
 
-   useEffect(() => {
+    useEffect(() => {
         const onClick = (e) => {
             if (!isClickedInside(e, containerRef.current)) {
                 onClose();
             }
         };
+
         window.addEventListener("click", onClick);
         return () => {
             window.removeEventListener("click", onClick);
         };
     });
+
     return (
         <div
             ref={containerRef}
             style={{
                 position: "absolute",
-                top: position.y + 50 + "px",
-                left: position.x + 20 + "px",
+                top: position.y + 20 + "px",
+                left: position.x + 10 + "px",
                 padding: "10px",
                 borderRadius: "3px",
                 boxShadow: "0 0 5px grey",
@@ -39,8 +42,8 @@ const Popup = ({ position, seatId, onClose }) => {
                 backgroundColor: "white"
             }}
         >
-            <div>Seat {seatId}</div>
-            <div>Click on the seat to select</div>
+            <div>Seat {seatId} </div>
+            <div>Click on the seat to select </div>
         </div>
     );
 };

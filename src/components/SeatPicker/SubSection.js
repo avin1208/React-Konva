@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { Group, Text } from "react-konva";
+import { Group, Text } from 'react-konva';
 
 import Seat from "./Seat";
 
-import { SEATS_DISTANCE, SUBSECTION_PADDING, SEAT_SIZE } from "./layout";
+import { SEAT_SIZE, SUBSECTION_PADDING, SEATS_DISTANCE } from './layout';
 
 export default ({
   width,
@@ -53,7 +53,7 @@ export default ({
             x={seatIndex * SEATS_DISTANCE + SUBSECTION_PADDING - 50}
             width={100}
             y={
-              Object.keys(data.seats_by_rows).length * SEATS_DISTANCE +
+              Object.keys(data.seats_by_rows).length * SEATS_DISTANCE + 
               SUBSECTION_PADDING
             }
             key={"label-bottom" + seatIndex}
@@ -62,7 +62,8 @@ export default ({
           />
         );
       })}
-      <Text text={data.name} width={width} align="center" y={-10} fontSize={SEAT_SIZE} />
+      <Text text={data.name} width={width} align="center" y={-5} fontSize={SEAT_SIZE} />
     </Group>
   );
 };
+
